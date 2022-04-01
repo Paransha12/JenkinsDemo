@@ -56,3 +56,5 @@ npm instal express --save     \\ it will install express framework
 Node Sever.js    \\ will run the file
 
 Open chrome give url: http://localhost:8080/getUser      \\endpoint which is listening at 8080 
+
+_________________----
