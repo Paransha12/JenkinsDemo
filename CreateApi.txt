@@ -1,0 +1,60 @@
+Create API in Node.JS:
+
+For creating API we need node.js software. Node js will download npm packages also, but we need to install and activate express.js services.
+
+Express: It is framework for building and creating web applications and APIs, also it is a free and open source which works on backend of Node.js.
+
+
+___________________
+Install Visual Studio Code for writing your source code:
+
+For writing source code we will be using JSON file.
+
+->Create a folder in VScode.
+->Create a JSON File and give the details.
+(NOTE:JSON file will never start with square brackets[])
+-> Save the file.
+
+Now create a server file in which we will provide Port and the connectivity details along with the EndPoint of the API.
+
+Host: localhost
+PortNo: 8080
+
+The body of Server.JS file will be divided into three parts:
+Rest api
+Endpoint
+Connecion and listen port detail
+
+REST API: will require express fraework.
+Define it:
+var express = require('express'); // requre the express framework
+var app = express();
+var fs = require('fs'); //require file system object
+__X_________
+ENDPOINT:here getUser is a method which will call func req and res.
+
+// Endpoint to Get a list of users
+app.get('/getUser', function(req, res){
+    fs.readFile(__dirname + "/" + "user.json", 'utf8', function(err, data){
+        console.log(data);
+        res.end(data); // you can also use res.send()
+    });
+})
+_____________X_________
+CONNECTION:
+// Create a server to listen at port 8080
+var server = app.listen(8080, function(){
+    var host = server.address().address
+    var port = server.address().port
+    console.log("REST API demo app listening at http://%s:%s", host, port)
+})
+
+______________________
+Now,
+In terminal start your server and type:
+npm instal express --save     \\ it will install express framework
+Node Sever.js    \\ will run the file
+
+Open chrome give url: http://localhost:8080/getUser      \\endpoint which is listening at 8080 
+
+_________________----
